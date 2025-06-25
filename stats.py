@@ -11,3 +11,15 @@ def count_the_characters(book_string):
         else:
             characters[character] = 1
     return characters
+
+def sort_on(items):
+    return items["num"]
+
+def sort_characters(character_dict):
+    new_structure = []
+    for character in character_dict:
+        if character.isalpha() == True:
+            dict_entry = {"char": character, "num": int(character_dict[character])}
+            new_structure.append(dict_entry)
+    new_structure.sort(reverse=True, key=sort_on)
+    return new_structure
