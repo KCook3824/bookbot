@@ -9,7 +9,11 @@ def get_book_text(file_path):
     return words, char_count, character_sorted
 
 def main():
-    path = "books/frankenstein.txt"
+    import sys
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    path = sys.argv[1]
     word_count, character_count, character_sorted = get_book_text(path)
     print(f"{word_count} words found in the document")
     print("============ BOOKBOT ============")
